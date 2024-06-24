@@ -1,21 +1,36 @@
 // App.js
 import React from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import Footer from "./componentes/ui/Footer";
+import Header from "./componentes/ui/Header";
+import "./App.scss"
+import { BrowserRouter, Route, Routes, NavLink } from "react-router-dom";
 
-import Home from "./vistas/Home";
+import HechosTransito from "./vistas/HechosTransito";
 import EcoBaby from "./vistas/EcoBaby";
+import Inicio from "./vistas/Inicio";
 
 function App() {
   return (
-    <Router>
-      <nav>
-        <Link to="/">Home</Link> | <Link to="/ecobaby">EcoBaby</Link>
-      </nav>
-      <Routes>
-        <Route exact path="/" element={<Home></Home>} />
-        <Route path="/ecobaby" element={<EcoBaby></EcoBaby>} />
-      </Routes>
-    </Router>
+    <>
+      <Header></Header>
+      <div id="contenido-vistas">
+        <BrowserRouter basename="/databis">
+          <h1>DataBis</h1>
+          <p></p>
+          <nav className="interno">
+          <NavLink to="/" >Inicio</NavLink> | <NavLink to="/ecobaby">Ecobici</NavLink> | <NavLink to="/hechos-transito" >Hechos de transito</NavLink> 
+          </nav>
+          <Routes>
+            <Route exact path="/" element={<Inicio></Inicio>} />
+           <Route path="/ecobaby" element={<EcoBaby></EcoBaby>} />
+
+            <Route path="/hechos-transito" element={<HechosTransito></HechosTransito>} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+
+      <Footer></Footer>
+    </>
   );
 }
 

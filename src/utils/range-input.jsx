@@ -17,7 +17,7 @@ const PositionContainer = styled('div')({
   alignItems: 'center'
 });
 
-const COLOR = '#000';
+const COLOR = '#fff';
 
 
 const SliderInput = styled(Slider)(({ theme }) => ({

@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "/movilidad-cdmx",
+  "homepage": "/databis",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -21,6 +21,7 @@
     "deck.gl": "^8.9.0",
     "mapbox-gl": "^3.4.0",
     "maplibre-gl": "^2.4.0",
+    "math.gl": "^4.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-map-gl": "^7.0.0",
@@ -35,6 +36,7 @@
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
+    "sass": "^1.77.5",
     "vite": "^5.2.0"
   }
 }

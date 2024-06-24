@@ -1,0 +1,42 @@
+#root {
+  #contenido-vistas {
+    padding: 16px;
+    max-width: 1280px;
+    margin: 0 auto;
+    .contenedor-mapa {
+      height: calc(100vh - 100px);
+      width: 100%;
+      position: relative;
+      .tooltip.interactive{
+        background:white;
+        color:black;
+        padding:5px;
+        border-radius:5px;
+        font-size:12px;
+      }
+    }
+    
+  }
+  nav.interno{
+    margin-bottom: 80px;
+    a{
+      font-size: 17px;
+      &.active{
+        font-weight: 700;
+        text-decoration: underline;
+      }
+    }
+  }
+  div.inicio{
+    max-width: 700px;
+  }
+}
+.vis-nomenclatura{
+  .figura-variable{
+    border-radius: 50%;
+    display: inline-block;
+    width: 15px;
+    height:15px;
+    margin: 0 5px 0 20px;
+  }
+}

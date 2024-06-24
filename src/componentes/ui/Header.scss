@@ -1,0 +1,40 @@
+$margen-lateral: 16px;
+header {
+  background: var(--pagina-fondo);
+  margin-bottom: 120px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border-bottom:  solid 2px var(--color-tipografia);
+
+  div.ancho-max {
+    max-width: 1280px;
+    margin: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0 16px;
+    a.marca {
+      font-family: "Roboto Mono", monospace!important;
+      padding: 8px 0;
+      display: block;
+      font-size: 20px;
+      max-width: 150px;
+      line-height: 0.9;
+      text-decoration: none !important;
+      color: var(--color-tipografia);
+    }
+  }
+
+  .contenedor {
+    flex-wrap: wrap;
+    display: flex;
+    width: 100%;
+  }
+
+  .ancho-max {
+    max-width: 1280px;
+    margin: auto;
+  }
+}
