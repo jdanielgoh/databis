@@ -44,7 +44,7 @@ const Home = ({
       });
   }, []);
 
-  const [selectedLayer, setSelectedLayer] = useState("layer1");
+  const [selectedLayer, setSelectedLayer] = useState("layer2");
   const handleLayerChange = (event) => {
     setSelectedLayer(event.target.value);
   };
@@ -104,7 +104,7 @@ const Home = ({
 
   return (
     <>
-      <div className="inicio">
+      <div className="hechos">
         <h2>Visualización de hechos de tránsito de ciclistas</h2>
         <p>
           En esta visualización se muestran los accientes de tránsito en los que

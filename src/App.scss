@@ -4,7 +4,7 @@
     max-width: 1280px;
     margin: 0 auto;
     .contenedor-mapa {
-      height: calc(100vh - 100px);
+      height: calc(95vh - 100px);
       width: 100%;
       position: relative;
       .tooltip.interactive{
@@ -27,8 +27,37 @@
       }
     }
   }
-  div.inicio{
+  div.inicio,div.ecobaby, div.hechos{
     max-width: 700px;
+  }
+  div.ecobaby{
+    .contenedor-info-control{
+      border-radius: 0 0 10px 0 ;
+      position:absolute;
+      z-index: 1;
+      width: 230px;
+      background-color: #292929ee;
+      padding: 8px;
+      .etiqueta-fecha{
+        font-weight: 700;
+        font-size: 20px;
+        opacity: .6
+      }
+      .etiqueta-hora{
+        font-weight: 600;
+        font-size: 28px;
+        opacity: .6
+
+      }
+      .contenedor-vel{
+        display: flex;
+
+        .etiqueta-vel{
+          color:#e2e2e2;
+        }
+      }
+    }
+    
   }
 }
 .vis-nomenclatura{

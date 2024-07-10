@@ -59,8 +59,9 @@ export default function RangeInput({min, max, value, animationSpeed, onChange, f
       <SliderInput
         min={min}
         max={max}
+        defaultValue={0}
         value={value}
-        onChange={(event, newValue) => onChange(newValue)}
+        onChange={(event, newValue) => onChange(+newValue)}
         valueLabelDisplay="on"
         valueLabelFormat={formatLabel}
       />
