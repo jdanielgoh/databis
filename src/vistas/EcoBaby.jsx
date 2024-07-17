@@ -2,19 +2,14 @@ import { useState, useMemo, useEffect } from "react";
 import { Map } from "react-map-gl";
 import maplibregl from "maplibre-gl";
 import { timeParse } from "d3-time-format";
-
 import DeckGL from "@deck.gl/react";
 import { GeoJsonLayer } from "@deck.gl/layers";
-
 import { load } from "@loaders.gl/core";
 import { CSVLoader } from "@loaders.gl/csv";
-
 import AnimatedArcLayer from "../utils/animated-arc-group-layer";
 import RangeInput from "../utils/range-input";
 import { styled } from "@mui/system";
-
 import Slider from "@mui/material/Slider";
-
 import diccionario_estaciones from "../assets/estaciones.json";
 import "maplibre-gl/dist/maplibre-gl.css";
 
@@ -32,12 +27,12 @@ const ControlDeslizante = styled(Slider)(({ theme }) => ({
 }));
 
 // Data source
-const DATA_URL = "https://tirandocodigo.mx/databis/datos/retiro_arribo.csv";
+const link_data = "https://tirandocodigo.mx/databis/datos/retiro_arribo.csv";
 
 const MAP_STYLE =
   "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json";
 
-const INITIAL_VIEW_STATE = {
+const vista_inicial = {
   longitude: -99.18,
   latitude: 19.41,
   zoom: 12,
@@ -58,7 +53,7 @@ export default function EcoBaby({
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    load(DATA_URL, CSVLoader, { csv: { dynamicTyping: false } }).then(
+    load(link_data, CSVLoader, { csv: { dynamicTyping: false } }).then(
       (viajes) => {
         setData(viajes);
       }
@@ -151,11 +146,11 @@ export default function EcoBaby({
         <div className="contenedor-info-control">
           <div>
             <span className="etiqueta-fecha">
-              {formatTimeLabel(tiempo_actual).split("-")[0]}
+              {formateandoEtiquetaTiempo(tiempo_actual).split("-")[0]}
             </span>
             <br />
             <span className="etiqueta-hora">
-              {formatTimeLabel(tiempo_actual).split("-")[1]}
+              {formateandoEtiquetaTiempo(tiempo_actual).split("-")[1]}
             </span>
           </div>
           <div className="contenedor-vel">
@@ -173,7 +168,7 @@ export default function EcoBaby({
       </div>
       <div className="contenedor-mapa">
         <DeckGL
-          initialViewState={INITIAL_VIEW_STATE}
+          initialViewState={vista_inicial}
           controller={true}
           layers={[citiesLayers, viajePathsLayer]}
         >
@@ -190,7 +185,7 @@ export default function EcoBaby({
             max={2678398}
             value={tiempo_actual}
             animationSpeed={velocidad}
-            formatLabel={formatTimeLabel}
+            formatLabel={formateandoEtiquetaTiempo}
             onChange={setTiempoActual}
           />
         )}
@@ -209,7 +204,7 @@ let dias = [
   "Sábado",
 ];
 
-function formatTimeLabel(seconds) {
+function formateandoEtiquetaTiempo(seconds) {
   var fecha_actualizada = timeParse("%d-%m-%Y")("01-05-2024");
 
   const dia = new Date(

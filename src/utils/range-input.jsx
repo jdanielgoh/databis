@@ -29,6 +29,16 @@ const SliderInput = styled(Slider)(({ theme }) => ({
     background: 'none',
     color: COLOR,
   },
+  transition: 'none', 
+  '& .MuiSlider-thumb': {
+    transition: 'none', 
+  },
+  '& .MuiSlider-track': {
+    transition: 'none', 
+  },
+  '& .MuiSlider-rail': {
+    transition: 'none', 
+  },
 }));
 
 export default function RangeInput({min, max, value, animationSpeed, onChange, formatLabel}) {
@@ -64,6 +74,8 @@ export default function RangeInput({min, max, value, animationSpeed, onChange, f
         onChange={(event, newValue) => onChange(+newValue)}
         valueLabelDisplay="on"
         valueLabelFormat={formatLabel}
+        disableSwap={true}
+        
       />
     </PositionContainer>
   );
